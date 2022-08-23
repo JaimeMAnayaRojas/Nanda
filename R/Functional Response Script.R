@@ -11,7 +11,7 @@
 library(rethinking)
 rm(list=ls(all=TRUE))
 
-data <- read.csv("data/FRdata.csv")
+data <- read.csv("data/FRdata_2.csv")
 data$Eaten <- data$R - data$Left
 
 # remove dead
@@ -21,22 +21,10 @@ data <- data[-which(is.na(data$Eaten)),]
 data$Expose = factor(data$Infection.status)
 
 levels(data$Expose)
-levels(data$Expose) <- c("E", "C") 
+levels(data$Expose) <- c("E", "C","E","E") 
 data$Expose
 
 # run the analyses in Batch 2
-B2 <- subset(data, Batch == 2)
-
-
-library(ggplot2)
-
-
-ggplot(B2, aes(x = R, y = Eaten, colour = Expose)) + geom_point() + geom_smooth()
-
-
-
-
-
 
 B4 <- subset(data, Batch == 4)
 
