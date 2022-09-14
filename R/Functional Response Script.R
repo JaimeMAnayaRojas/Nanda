@@ -218,6 +218,8 @@ IfM <- sapply(1:length(xR), function(i) p_linkINF(post, nIf = 0, If = 1, xR[i]))
 LOS(nIfM-CM)# 63.4% that the curve of exposure is higher than the control
 LOS(IfM-CM)# 83.72% that the curve of infected curve is higher than the control
 
+LOS((IfM-CM) - (nIfM-CM))# 79% that the curve of infected curve is higher than the non infected
+
 apply(Exp1,2, mean)
 
 
